@@ -1,0 +1,2 @@
+let proxy_domain = "https://integrate.api.nvidia.com"; // 修改为你的网站地址
+import { serve } from "https://deno.land/std@0.120.0/http/server.ts";async function handler(req: Request): Response {return fetch(proxy_domain+req.url.split('deno.dev')[1],{headers:req.headers,method:req.method,body:req.body});}await serve(handler);
